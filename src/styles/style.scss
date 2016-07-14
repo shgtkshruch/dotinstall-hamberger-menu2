@@ -1,0 +1,60 @@
+$width-menu: 180px;
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Verdana, sans-serif;
+  overflow-x: hidden;
+}
+
+.main {
+  box-sizing: border-box;
+  background-color: #eee;
+  padding: 8px;
+  color: #333;
+  &.menu-open {
+    left: $width-menu * -1;
+  }
+}
+
+.cover {
+  display: none;
+  background-color: #000;
+  opacity: .6;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.menu {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  right: $width-menu * -1;
+  width: $width-menu;
+  min-height: 100%;
+  color: #fff;
+  background-color: #4c81e9;
+  padding: 8px;
+  transition: right .4s;
+  z-index: 2;
+}
+
+.show,
+.hide {
+  float: right;
+  cursor: pointer;
+}
+
+.menu-open {
+  overflow-y: hidden;
+  .cover {
+    display: block;
+  }
+  .menu {
+    right: 0;
+  }
+}
